@@ -38,7 +38,7 @@
 	- Add `import android.view.KeyEvent;` and `import com.reactlibrary.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
 	- Append the following lines to MainActivity class 
 	```
-		@Override
+	  @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return RNVolumeListenModule.onKeyDownEvent(keyCode, event);
     }

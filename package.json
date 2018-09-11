@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "description": "Volume listen",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nghi-NV/react-native-volume-listen.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
