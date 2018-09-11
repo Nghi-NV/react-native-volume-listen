@@ -35,10 +35,10 @@
   	```
 
 4. Important
-	- Add `import android.view.KeyEvent;` and `import com.reactlibrary.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
-	- Append the following lines to MainActivity class 
+  - Add `import android.view.KeyEvent;` and `import com.reactlibrary.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
+  - Append the following lines to MainActivity class 
 	```
-	  @Override
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return RNVolumeListenModule.onKeyDownEvent(keyCode, event);
     }
@@ -52,26 +52,26 @@ import VolumeListen from 'react-native-volume-listen';
 
 // TODO: What to do with the module?
 export default class Example extends Component {
-	onVolumePress = (volume) => {
-		// return UP or DOWN
+  onVolumePress = (volume) => {
+    // return UP or DOWN
     console.log('onVolumePress', volume)
-	}
+  }
 	
-	onChangeVolume = (volume) => {
-		//return current volume (0 -> 1)
-		console.log('onChangeVolume', volume)
-	}
+  onChangeVolume = (volume) => {
+    //return current volume (0 -> 1)
+    console.log('onChangeVolume', volume)
+  }
 
-	render() {
-		return (
-			<View style={{flex: 1}}>
-				<VolumeListen 
-					onVolumePress={this.onVolumePress}
-					onChangeVolume={this.onChangeVolume} // Only IOS
-				/>
-			</View>
-		)
-	}
+  render() {
+    return (
+      <View style={{flex: 1}}>
+        <VolumeListen 
+	  onVolumePress={this.onVolumePress}
+	  onChangeVolume={this.onChangeVolume} // Only IOS
+	/>
+      </View>
+    )
+  }
 }
 ```
   
