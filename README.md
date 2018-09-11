@@ -22,7 +22,7 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.reactlibrary.RNVolumeListenPackage;` to the imports at the top of the file
+  - Add `import com.nghinv.volumelisten.RNVolumeListenPackage;` to the imports at the top of the file
   - Add `new RNVolumeListenPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
@@ -35,7 +35,7 @@
   	```
 
 4. Important
-  - Add `import android.view.KeyEvent;` and `import com.reactlibrary.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
+  - Add `import android.view.KeyEvent;` and `import com.nghinv.volumelisten.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
   - Append the following lines to MainActivity class 
 	```
     @Override
