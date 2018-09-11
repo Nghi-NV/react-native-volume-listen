@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install react-native-volume-listen --save`
+`$ yarn add react-native-volume-listen`
 
 ### Mostly automatic installation
 
@@ -21,7 +21,7 @@
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
   - Add `import com.reactlibrary.RNVolumeListenPackage;` to the imports at the top of the file
   - Add `new RNVolumeListenPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
@@ -34,20 +34,44 @@
       compile project(':react-native-volume-listen')
   	```
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNVolumeListen.sln` in `node_modules/react-native-volume-listen/windows/RNVolumeListen.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Volume.Listen.RNVolumeListen;` to the usings at the top of the file
-  - Add `new RNVolumeListenPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
+4. Important
+	- Add `import android.view.KeyEvent;` and `import com.reactlibrary.RNVolumeListenModule;` to the imports at top of the file MainActivity.java
+	- Append the following lines to MainActivity class 
+	```
+		@Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return RNVolumeListenModule.onKeyDownEvent(keyCode, event);
+    }
+	```
 
 ## Usage
 ```javascript
-import RNVolumeListen from 'react-native-volume-listen';
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import VolumeListen from 'react-native-volume-listen';
 
 // TODO: What to do with the module?
-RNVolumeListen;
+export default class Example extends Component {
+	onVolumePress = (volume) => {
+		// return UP or DOWN
+    console.log('onVolumePress', volume)
+	}
+	
+	onChangeVolume = (volume) => {
+		//return current volume (0 -> 1)
+		console.log('onChangeVolume', volume)
+	}
+
+	render() {
+		return (
+			<View style={{flex: 1}}>
+				<VolumeListen 
+					onVolumePress={this.onVolumePress}
+					onChangeVolume={this.onChangeVolume} // Only IOS
+				/>
+			</View>
+		)
+	}
+}
 ```
   

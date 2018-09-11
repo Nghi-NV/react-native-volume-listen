@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8416D7672146812800466B28 /* ReactNativeVolumeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416D70B2146807C00466B28 /* ReactNativeVolumeController.m */; };
-		8416D7682146812C00466B28 /* VolumeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416D70D2146807C00466B28 /* VolumeSlider.m */; };
+		B15A786A1C561BE10027C1CE /* VolumeListenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B15A78671C561BE10027C1CE /* VolumeListenManager.m */; };
+		B15A786B1C561BE10027C1CE /* VolumeListen.m in Sources */ = {isa = PBXBuildFile; fileRef = B15A78691C561BE10027C1CE /* VolumeListen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		58B511D91A9E6C8500147676 /* CopyFiles */ = {
+		B15A78591C561BA20027C1CE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -24,15 +24,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libRNVolumeListen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVolumeListen.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8416D70A2146807C00466B28 /* ReactNativeVolumeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeVolumeController.h; sourceTree = "<group>"; };
-		8416D70B2146807C00466B28 /* ReactNativeVolumeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeVolumeController.m; sourceTree = "<group>"; };
-		8416D70C2146807C00466B28 /* VolumeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
-		8416D70D2146807C00466B28 /* VolumeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeSlider.m; sourceTree = "<group>"; };
+		B15A785B1C561BA20027C1CE /* libRNVolumeListen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVolumeListen.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15A78671C561BE10027C1CE /* VolumeListenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeListenManager.m; sourceTree = "<group>"; };
+		B15A78681C561BE10027C1CE /* VolumeListen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeListen.h; sourceTree = "<group>"; };
+		B15A78691C561BE10027C1CE /* VolumeListen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeListen.m; sourceTree = "<group>"; };
+		B15A786C1C561C210027C1CE /* VolumeListenManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeListenManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		58B511D81A9E6C8500147676 /* Frameworks */ = {
+		B15A78581C561BA20027C1CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,98 +42,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		134814211AA4EA7D00B7C361 /* Products */ = {
+		B15A78521C561BA20027C1CE = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libRNVolumeListen.a */,
+				B15A785D1C561BA20027C1CE /* RNVolumeListen */,
+				B15A785C1C561BA20027C1CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B15A785C1C561BA20027C1CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B15A785B1C561BA20027C1CE /* libRNVolumeListen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58B511D21A9E6C8500147676 = {
+		B15A785D1C561BA20027C1CE /* RNVolumeListen */ = {
 			isa = PBXGroup;
 			children = (
-				8416D7092146807C00466B28 /* ReactNativeVolumeController */,
-				134814211AA4EA7D00B7C361 /* Products */,
+				B15A786C1C561C210027C1CE /* VolumeListenManager.h */,
+				B15A78671C561BE10027C1CE /* VolumeListenManager.m */,
+				B15A78681C561BE10027C1CE /* VolumeListen.h */,
+				B15A78691C561BE10027C1CE /* VolumeListen.m */,
 			);
-			sourceTree = "<group>";
-		};
-		8416D7092146807C00466B28 /* ReactNativeVolumeController */ = {
-			isa = PBXGroup;
-			children = (
-				8416D70A2146807C00466B28 /* ReactNativeVolumeController.h */,
-				8416D70B2146807C00466B28 /* ReactNativeVolumeController.m */,
-				8416D70C2146807C00466B28 /* VolumeSlider.h */,
-				8416D70D2146807C00466B28 /* VolumeSlider.m */,
-			);
-			path = ReactNativeVolumeController;
+			path = RNVolumeListen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* RNVolumeListen */ = {
+		B15A785A1C561BA20027C1CE /* RNVolumeListen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNVolumeListen" */;
+			buildConfigurationList = B15A78641C561BA20027C1CE /* Build configuration list for PBXNativeTarget "RNVolumeListen" */;
 			buildPhases = (
-				58B511D71A9E6C8500147676 /* Sources */,
-				58B511D81A9E6C8500147676 /* Frameworks */,
-				58B511D91A9E6C8500147676 /* CopyFiles */,
+				B15A78571C561BA20027C1CE /* Sources */,
+				B15A78581C561BA20027C1CE /* Frameworks */,
+				B15A78591C561BA20027C1CE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RNVolumeListen;
-			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libRNVolumeListen.a */;
+			productName = RNVolumeSlider;
+			productReference = B15A785B1C561BA20027C1CE /* libRNVolumeListen.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		58B511D31A9E6C8500147676 /* Project object */ = {
+		B15A78531C561BA20027C1CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = Facebook;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Ilja Satchok";
 				TargetAttributes = {
-					58B511DA1A9E6C8500147676 = {
-						CreatedOnToolsVersion = 6.1.1;
+					B15A785A1C561BA20027C1CE = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 93EGD877N5;
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNVolumeListen" */;
+			buildConfigurationList = B15A78561C561BA20027C1CE /* Build configuration list for PBXProject "RNVolumeListen" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 58B511D21A9E6C8500147676;
-			productRefGroup = 58B511D21A9E6C8500147676;
+			mainGroup = B15A78521C561BA20027C1CE;
+			productRefGroup = B15A785C1C561BA20027C1CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* RNVolumeListen */,
+				B15A785A1C561BA20027C1CE /* RNVolumeListen */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		58B511D71A9E6C8500147676 /* Sources */ = {
+		B15A78571C561BA20027C1CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8416D7682146812C00466B28 /* VolumeSlider.m in Sources */,
-				8416D7672146812800466B28 /* ReactNativeVolumeController.m in Sources */,
+				B15A786B1C561BE10027C1CE /* VolumeListen.m in Sources */,
+				B15A786A1C561BE10027C1CE /* VolumeListenManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		58B511ED1A9E6C8500147676 /* Debug */ = {
+		B15A78621C561BA20027C1CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -146,13 +147,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -163,21 +164,20 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		58B511EE1A9E6C8500147676 /* Release */ = {
+		B15A78631C561BA20027C1CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,13 +190,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -207,31 +207,31 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		58B511F01A9E6C8500147676 /* Debug */ = {
+		B15A78651C561BA20027C1CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNVolumeListen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		58B511F11A9E6C8500147676 /* Release */ = {
+		B15A78661C561BA20027C1CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNVolumeListen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -239,25 +239,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNVolumeListen" */ = {
+		B15A78561C561BA20027C1CE /* Build configuration list for PBXProject "RNVolumeListen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58B511ED1A9E6C8500147676 /* Debug */,
-				58B511EE1A9E6C8500147676 /* Release */,
+				B15A78621C561BA20027C1CE /* Debug */,
+				B15A78631C561BA20027C1CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNVolumeListen" */ = {
+		B15A78641C561BA20027C1CE /* Build configuration list for PBXNativeTarget "RNVolumeListen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58B511F01A9E6C8500147676 /* Debug */,
-				58B511F11A9E6C8500147676 /* Release */,
+				B15A78651C561BA20027C1CE /* Debug */,
+				B15A78661C561BA20027C1CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
+	rootObject = B15A78531C561BA20027C1CE /* Project object */;
 }

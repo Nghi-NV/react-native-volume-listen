@@ -1,8 +1,7 @@
-
-#import "RNVolumeListen.h"
+#import "VolumeListenManager.h"
 #import "VolumeListen.h"
 
-@implementation RNVolumeListen
+@implementation VolumeListenManager
 RCT_EXPORT_MODULE()
 
 - (UIView *)view {
@@ -25,4 +24,3 @@ RCT_CUSTOM_VIEW_PROPERTY(thumbSize, RCTthumbSize, VolumeListen) {
 }
 
 @end
-  

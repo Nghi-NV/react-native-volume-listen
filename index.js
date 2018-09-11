@@ -1,32 +1,75 @@
+/* @flow */
+'use strict';
 
 import React, { PureComponent } from 'react';
-import { NativeModules, NativeEventEmitter, requireNativeComponent, Platform, View } from 'react-native';
+import { requireNativeComponent, Platform, View, NativeModules, NativeEventEmitter } from 'react-native';
 
 const isIOS = Platform.OS === 'ios';
 const { RNVolumeListen } = NativeModules;
-const eventEmitter = new NativeEventEmitter(RNVolumeListen);
+const eventEmitter = isIOS ? undefined : new NativeEventEmitter(RNVolumeListen);
 
-class VolumeListen extends PureComponent {
-  static addVolumeListener(callback) {
-    return eventEmitter.addListener('VolumeControllerPress', callback)
+class VolumeListen extends PureComponent<Props> {
+  constructor(props) {
+    super(props);
+    this.volume = null;
   }
 
-  onValueChange = () => {
-    console.log('onValueChange')
+  componentDidMount() {
+    if (!isIOS) {
+      this.addVolumeListener = eventEmitter.addListener('VolumeControllerPress', this.onVolumePress)
+    }
+  }
+
+  componentWillUnmount() {
+    if (!isIOS) {
+      eventEmitter.removeListener(this.addVolumeListener)
+    }
+  }
+
+  onVolumePress = (volumeKey) => {
+    this.props.onVolumePress && this.props.onVolumePress(volumeKey);
+  }
+
+  onValueChange = ({ nativeEvent }) => {
+    let newVolume = nativeEvent.value;
+    this.props.onChangeVolume && this.props.onChangeVolume(newVolume);
+
+    if (!this.volume) {
+      this.volume = newVolume;
+      return;
+    }
+
+    if (newVolume > this.volume) {
+      this.props.onVolumePress && this.props.onVolumePress('UP');
+    } else {
+      this.props.onVolumePress && this.props.onVolumePress('DOWN');
+    }
+
+    this.volume = newVolume;
   }
 
   render() {
     if (isIOS) {
-      <ReactNativeVolumeControllerSlider
-        {...rest}
-        onValueChange={this.onValueChange}
-        style={styles.slider}
-      />
+      return (
+        <RNVolumeView
+          onValueChange={this.onValueChange}
+          style={{ width: 0, height: 0, position: 'absolute' }}
+          thumbTintColor='transparent'
+          thumbSize={{ width: 0, height: 0 }}
+        />
+      );
     }
 
     return null;
   }
+
 }
 
-var ReactNativeVolumeControllerSlider = isIOS ? requireNativeComponent('RNVolumeListen', VolumeListen) : <View/>;
+interface Props {
+  onVolumePress: (volume: 'UP' | 'DOWN') => void;
+  onChangeVolume: (volume: number) => void;
+}
+
+const RNVolumeView = isIOS ? requireNativeComponent('VolumeListen', VolumeListen) : View;
+
 export default VolumeListen;
